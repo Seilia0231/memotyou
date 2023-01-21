@@ -6,8 +6,14 @@
     </head>
     <body>
         <a type="button" href="hone.html">戻る</a><br>
-        <input id="title" type="text" placeholder="タイトル"
-               maxlength="100" style="width:50%; font-size:130%;"/> 
-        <textarea id="body" type="text" placeholder="本文" maxlength="1000" style="width:100%; height:70px;" ></textarea>
+        <div class="memoApp">
+            <div class="memoFrom">
+                <input id="title" type="text" placeholder="タイトル"
+                        maxlength="100" style="width:50%; font-size:130%;"/> 
+                <textarea id="body" type="text" placeholder="本文" maxlength="1000" style="width:100%; height:70px;" ></textarea>
+                <button id="save" class="btn btn-primary btn-block">保存</button>
+            </div>
+            <div id="mamoArea"></div>
+        </div>
     </body>
 </html>
