@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="styles.css">
+        <script language="javascript" type="text/javascript">
+            // 読込
+            function load() {
+              var mydata = "";
+              if(!localStorage.getItem('mydata')) {
+                mydata = "データがありません";
+              } else {
+                mydata = localStorage.getItem('mydata');
+              }
+              console.log(`mydata= ${mydata}`);
+              document.getElementById("memoArea").innerHTML = mydata;
+            }
+            // 保存
+            function save() {
+              var mydata = document.getElementById("body").value;
+              localStorage.setItem('mydata', mydata);
+            }
+          </script>
+    </head>
+    <body>
+        <a type="button" href="home.html">戻る</a><br>
+        <div class="memoApp">
+            <div class="memoFrom">
+                <input id="title" type="text" placeholder="タイトル" 
+                        maxlength="100" style="width:50%; font-size:130%;" /> 
+                <textarea id="body" type="text" placeholder="本文" maxlength="1000" style="width:100%; height:70px;" ></textarea>
+                <button id="save" class="btn btn-primary btn-block" onclick="save();">保存</button>
+                <button onclick="load();">読込</button>
+            </div>
+            <div id="memoArea"></div>
+        </div>
+    </body>
+</html>
