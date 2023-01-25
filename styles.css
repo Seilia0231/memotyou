@@ -1,3 +1,9 @@
 input {
     margin: 1em 1px;
 }
+.bodyArea{
+    border: none;
+}
+.titleArea{
+    border: none;
+}
