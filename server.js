@@ -71,3 +71,24 @@ function load(){
     const data = JSON.parse(localStorage.getItem('data'));
     document.getElementById("bodyArea").innerText = bodydata;
 }*/
+/*var saveMemo = ['','',''];
+function save(){
+    var savedata = document.getElementById("title").value;
+    localStorage.setItem('savedata',savedata);
+}
+
+function load(){
+    var savedata = localStorage.getItem('savedata');
+    document.getElementById("bodyArea").innerText = savedata;
+}*/
+function save(){
+    var savedata = document.getElementById("body").value;
+    console.log(`body = ${body}`);
+    localStorage.setItem('savedata',savedata);
+}
+function load(){
+    var savedata = localStorage.getItem('savedata');
+    document.getElementById("body").innerText = savedata;
+    console.log(1);
+
+}
