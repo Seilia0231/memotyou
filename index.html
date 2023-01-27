@@ -3,28 +3,19 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="styles.css">
-        <script language="javascript" type="text/javascript">
-            // 読込
-            function load() {
-              var titledata = "";
-              var bodydata = "";
-              if(!localStorage.getItem('bodydata') && !localStorage.getItem('titledata')) {
-              } else{
-                titledata = localStorage.getItem('titledata');
-                bodydata = localStorage.getItem('bodydata');
-              }
-              document.getElementById("load").onclick = function() {
-                document.getElementById("text").style.display = "none";
-              };
-              document.getElementById("titleArea").innerHTML = titledata;
-              document.getElementById("body").innerHTML = bodydata;
+          <script>
+            function save(){
+                /*const savedata= {
+                    name:"bodyData",
+                }
+                const bodydata = JSON.stringify(savedata);*/
+                localStorage.setItem('savedata','body');
+                console.log(savedata);
             }
-            // 保存
-            function save() {
-              var titledata = document.getElementById("title").value;
-              localStorage.setItem('titledata', titledata);
-              var bodydata = document.getElementById("body").value;
-              localStorage.setItem('bodydata', bodydata);
+            function load(){
+                const data = JSON.parse(localStorage.getItem('savedata'));
+                console.log(1);
+
             }
           </script>
     </head>
@@ -35,8 +26,8 @@
                 <input id="title" type="text" placeholder="タイトル" 
                         maxlength="100" style="width:50%; font-size:130%;" /> 
                 <textarea id="body" type="text" placeholder="本文" maxlength="1000" style="width:100%; height:70px;" ></textarea>
-                <button id="save" class="btn btn-primary btn-block" onclick="save();">保存</button>
-                <button id="load" onclick="load();">読込</button>
+                <button id="save" class="btn btn-primary btn-block" onclick="save()">保存</button>
+                <button id="load" onclick="load()">読込</button>
             </div>
             <input id="titleArea"  class="titleArea"/>
             <textarea id="bodyArea"  placeholder="保存したメモが読み込まれます" class="bodyArea" maxlength="1000" style="width:100%; height:100px;"></textarea>

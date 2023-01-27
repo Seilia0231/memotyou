@@ -58,4 +58,16 @@
     $("#btnAdd").on('click',function(){
         add();
     });
-});*/
+});
+function save(){
+    const data= {
+        name:"body",
+        flag:true,
+    }
+    const bodydata = JSON.stringify(data);
+    localStorage.setItem('data',bodydata);
+}
+function load(){
+    const data = JSON.parse(localStorage.getItem('data'));
+    document.getElementById("bodyArea").innerText = bodydata;
+}*/
