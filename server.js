@@ -1,94 +1,50 @@
-/*$(document).ready(function(){
-    var saveStorage = function(key,val){
-        localStorage.setItem(key,JSON.stringfy(val));
-    };
-
-    var getStorage = function(key){
-        var obj = localStorage.getItem(key);
-        return JOSN.parse(obj);
-    };
-
-    var add = function(){
-        var ttl = $(".memoFrom #title").val();
-                bdy = $(".memoFrom #body").val();
-        addMemo(ttl,bdy);
-        saveMemo(ttl.bdy);
-    };
-
-    var addMemo = function(ttl,bdy){
-        var template = '<input id="title" type="text" placeholder="%s" maxlength="100" style="width:50%; font-size:130%;" />' +
-        '<textarea id="body" type="text" placeholder="%s" maxlength="1000" style="width:100%; height:70px;" ></textarea>';
-        template = template.replace('%s',ttl).replace('%s',bdy);
-
-        $("#memoArea").append(template);
-        $(".memoFrom #title").val('');
-        $(".memoFrom #body").val('');
-    }
-
-    memoArr = [];
-    var storageKey = 'memoObj';
-
-    var saveMemo = function(ttl,bdy){
-        var memoObj = {
-            ttl : ttl,
-            bdy : bdy
-        };
-        memoArr.push(memoObj);
-        saveStorage(storageKey.MemoArr);
-    }
-
-    var readMemo = function(){
-        var readMemoObjs = getStorage(storageKey);
-        if(memoObjs.length == null) return;
-        for (var i = 0;i < memoObjs.length;i++){
-            var memoObj = memoObjs[i];
-            var ttl = memoObj.ttl;
-            var bdy = memoObj.bdy;
-            var memoObj = {
-                ttl : ttl,
-                bdy : bdy
-            };
-            memoArr.push(memoObj);
-            saveStorage(storageKey,memoArr);
-            addMemo(ttl,bdy);
-        }
-    };
-    readMemo();
-    
-    $("#btnAdd").on('click',function(){
-        add();
-    });
-});
+var titleData = ['title1', 'title2,', 'title3'];
+var bodyData = ['body1', 'body2', 'body3'];
 function save(){
-    const data= {
-        name:"body",
-        flag:true,
+    if(document.getElementById("title")){
+        var title = document.getElementById("title");
+        var body = document.getElementById("body");
+        titleData.splice(0,1,title.value);
+        bodyData.splice(0,1,body.value);
+        localStorage.setItem('titledata',JSON.stringify(titleData[0]));
+        localStorage.setItem('bodydata',JSON.stringify(bodyData[0]));
     }
-    const bodydata = JSON.stringify(data);
-    localStorage.setItem('data',bodydata);
-}
-function load(){
-    const data = JSON.parse(localStorage.getItem('data'));
-    document.getElementById("bodyArea").innerText = bodydata;
-}*/
-/*var saveMemo = ['','',''];
-function save(){
-    var savedata = document.getElementById("title").value;
-    localStorage.setItem('savedata',savedata);
+    else if(document.getElementById("title2")){
+        var title2 = document.getElementById("title2");
+        var body2 = document.getElementById("body2");
+        titleData.splice(1,1,title2.value);
+        bodyData.splice(1,1,body2.value);
+        localStorage.setItem('titledata2',JSON.stringify(titleData[1]));
+        localStorage.setItem('bodydata2',JSON.stringify(bodyData[1]));
+    }
+    else{
+        var title3 = document.getElementById("title3");
+        var body3 = document.getElementById("body3");
+        titleData.splice(2,1,title3.value);
+        bodyData.splice(2,1,body2.value);
+        localStorage.setItem('titledata3',JSON.stringify(titleData[2]));
+        localStorage.setItem('bodydata3',JSON.stringify(bodyData[3]));
+    }
+    console.log(titleData);
+    console.log(bodyData);
 }
 
 function load(){
-    var savedata = localStorage.getItem('savedata');
-    document.getElementById("bodyArea").innerText = savedata;
-}*/
-function save(){
-    var savedata = document.getElementById("body").value;
-    console.log(`body = ${body}`);
-    localStorage.setItem('savedata',savedata);
-}
-function load(){
-    var savedata = localStorage.getItem('savedata');
-    document.getElementById("body").innerText = savedata;
-    console.log(1);
+    if(document.getElementById("title")){
+        var titledata = JSON.parse(localStorage.getItem("titledata"));
+        var bodydata = JSON.parse(localStorage.getItem("bodydata"));
+        document.getElementById("body").innerHTML = titledata;
+        document.getElementById("bodyArea").innerHTML = bodydata;
 
+    }
+    else if(document.getElementById("title2")){
+        var titledata2 = JSON.parse(localStorage.getItem("titledata2"));
+        var bodydata2 = JSON.parse(localStorage.getItem("bodydata2"));
+        document.getElementById("body2").innerHTML = titledata2;
+    }
+    else{
+        var titledata3 = JSON.parse(localStorage.getItem("titledata3"));
+        var bodydata3 = JSON.parse(localStorage.getItem("bodydata3"));
+        document.getElementById("body3").innerHTML = titledata3;
+    }
 }
