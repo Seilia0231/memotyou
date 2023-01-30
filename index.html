@@ -6,9 +6,14 @@
         <script src="server.js"></script>
     </head>
     <body>
-        <a type="button" href="home.html">戻る</a><br>
-        <input id="title" type="text" placeholder="タイトル" class="title" 
-                maxlength="100" style="width:50%; font-size:130%;" /> 
+
+        <nav>
+            <li><a type="button" href="index.html">メモ1</a></li>
+            <li><a type="button" href="index2.html" onclick="save();">メモ2</a></li>
+            <li><a type="button" href="index3.html" onclick="save();">メモ3</a></li>
+        </nav>
+         <textarea id="title" type="text" placeholder="タイトル" class="title" 
+                maxlength="100" style="width:50%; font-size:130%;" ></textarea> 
         <textarea id="body" type="text" placeholder="本文" maxlength="1000" style="width:100%; height:70px;" ></textarea>
         <button id="save" class="btn btn-primary btn-block" onclick="save();">保存</button>
         <button id="load" onclick="load();">読込</button>

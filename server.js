@@ -21,30 +21,32 @@ function save(){
         var title3 = document.getElementById("title3");
         var body3 = document.getElementById("body3");
         titleData.splice(2,1,title3.value);
-        bodyData.splice(2,1,body2.value);
+        bodyData.splice(2,1,body3.value);
         localStorage.setItem('titledata3',JSON.stringify(titleData[2]));
-        localStorage.setItem('bodydata3',JSON.stringify(bodyData[3]));
+        localStorage.setItem('bodydata3',JSON.stringify(bodyData[2]));
     }
     console.log(titleData);
     console.log(bodyData);
 }
 
 function load(){
-    if(document.getElementById("title")){
+    if(document.getElementById("load")){
         var titledata = JSON.parse(localStorage.getItem("titledata"));
         var bodydata = JSON.parse(localStorage.getItem("bodydata"));
-        document.getElementById("body").innerHTML = titledata;
-        document.getElementById("bodyArea").innerHTML = bodydata;
+        document.getElementById("title").innerText = titledata;
+        document.getElementById("body").innerText = bodydata;
 
     }
-    else if(document.getElementById("title2")){
+    else if(document.getElementById("load2")){
         var titledata2 = JSON.parse(localStorage.getItem("titledata2"));
         var bodydata2 = JSON.parse(localStorage.getItem("bodydata2"));
-        document.getElementById("body2").innerHTML = titledata2;
+        document.getElementById("title2").innerText = titledata2;
+        document.getElementById("body2").innerText = bodydata2;
     }
     else{
         var titledata3 = JSON.parse(localStorage.getItem("titledata3"));
         var bodydata3 = JSON.parse(localStorage.getItem("bodydata3"));
-        document.getElementById("body3").innerHTML = titledata3;
+        document.getElementById("title3").innerText = titledata3;
+        document.getElementById("body3").innerText = bodydata3;
     }
 }
