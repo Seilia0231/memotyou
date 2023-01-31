@@ -1,9 +1,43 @@
-input {
+textarea {
     margin: 1em 1px;
-}
-.bodyArea{
     border: none;
+    color:#000
 }
-.titleArea{
-    border: none;
+body{
+    background: 
+      linear-gradient(
+        90deg,
+        rgba(208, 147, 82, 0.6),
+        rgba(202, 147, 89, 0.6) 60%,
+        rgba(175, 144, 110, 0.6)
+      ),
+      repeating-radial-gradient(
+        ellipse at 60% 500%,
+        #c08646,
+        #c08646 0.2%,
+        #d09352 0.6%,
+        #d09352 1%
+      );
+}
+.title{
+    font-size: large;
+}
+nav{
+  text-decoration: none;
+}
+.select{
+  color:blue;
+}
+a{
+  color: #000;
+  text-decoration: none;
+}
+button{
+  background-color: rgb(42, 22, 14);
+ /* border-top: 4px solid ;
+  border-right: 4px solid;
+  border-bottom: 4px solid;
+  border-left: 4px solid;*/
+  border-radius: 100vh;
+  color: #c08646;
 }

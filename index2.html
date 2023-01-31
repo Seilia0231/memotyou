@@ -3,20 +3,18 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="styles.css">
-        <script src="server.js"></script>
+        <script src="main.js"></script>
     </head>
     <body>
         <nav>
             <li><a type="button" href="index.html" onclick="save();">メモ1</a></li>
-            <li><a type="button" href="index2.html">メモ2</a></li>
+            <li><a class="select" type="button" href="index2.html">メモ2</a></li>
             <li><a type="button" href="index3.html" onclick="save();">メモ3</a></li>
         </nav>
-        <textarea id="title2" type="text" placeholder="タイトル" class="title2" 
-                maxlength="100" style="width:50%; font-size:130%;" ></textarea> 
-        <textarea id="body2" type="text" placeholder="本文" maxlength="1000" style="width:100%; height:70px;" ></textarea>
+        <textarea id="title2" type="text" placeholder="タイトル" class="title" 
+                maxlength="100" style="width:50%; font-size:130%; background-color: transparent;" ></textarea> 
+        <textarea id="body2" type="text" placeholder="本文" maxlength="1000" style="width:100%; height:70px; background-color: transparent;" ></textarea>
         <button id="save" class="btn btn-primary btn-block" onclick="save();">保存</button>
         <button id="load2" onclick="load();">読込</button>
-        <input id="titleArea"  class="titleArea"/>
-        <textarea id="bodyArea2"  placeholder="保存したメモが読み込まれます" class="bodyArea" maxlength="1000" style="width:100%; height:100px;"></textarea>
     </body>
 </html>
